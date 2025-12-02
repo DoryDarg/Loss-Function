@@ -225,15 +225,6 @@ if __name__ == "__main__":
             print("종료합니다.")
             break
 
-        # 정답 레이블도 같이 넣고 싶으면 여기서 입력받을 수 있음
-        label_input = input("정답 숫자(0~9, 모르면 그냥 엔터): ").strip()
-        if label_input == "":
-            true_label = None
-        else:
-            try:
-                true_label = int(label_input)
-            except ValueError:
-                print("숫자가 아니라서 정답은 무시합니다.")
-                true_label = None
 
         predict_image(user_path, true_label=true_label)
+

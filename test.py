@@ -215,16 +215,17 @@ if __name__ == "__main__":
     print("\n=== 테스트 샘플 예측 ===")
     predict_image(sample_path, true_label=sample_label)
 
+    print("\n예측할 이미지 파일 이름을 입력하세요.")
+    print("(예: my_digit.png, 그냥 엔터 치면 종료)")
+    
     # 여기부터: 사용자 입력으로 파일명 받아서 예측
     while True:
         print("\n예측할 이미지 파일 이름을 입력하세요.")
-        print("(예: my_digit.png, 그냥 엔터 치면 종료)")
         user_path = input("파일 이름: ").strip()
 
         if user_path == "":
             print("종료합니다.")
             break
 
-
-        predict_image(user_path, true_label=true_label)
-
+        # 정답 입력 받지 않고, 이미지 예측만 수행
+        predict_image(user_path)
